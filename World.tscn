@@ -89,7 +89,7 @@ position = Vector2( 23, 20 )
 scale = Vector2( 0.01, 0.01 )
 frames = SubResource( 5 )
 animation = "idle"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Key" type="Sprite" parent="Player/CanvasLayer"]
@@ -141,4 +141,3 @@ stream = ExtResource( 10 )
 [connection signal="body_entered" from="KillPlane" to="." method="_on_KillPlane_body_entered"]
 [connection signal="start_game" from="NewGameScreen" to="." method="_on_New_Game_start_game"]
 [connection signal="body_entered" from="Doors" to="." method="_on_Doors_body_entered"]
-[connection signal="body_exited" from="Doors" to="." method="_on_Doors_body_exited"]

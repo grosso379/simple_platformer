@@ -89,7 +89,7 @@ func spwan_coins():
 	
 	var coin3 = COIN.instance()	
 	coin3.position = Vector2(3700, 35)
-	add_child(coin2)
+	add_child(coin3)
 	
 func spawn_key():
 	var key = KEY.instance()
