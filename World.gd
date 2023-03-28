@@ -10,8 +10,8 @@ const KEY = preload("Key.tscn")
 var player_won = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	$WorldEnvironment.get_environment().set_dof_blur_near_enabled(true)
+#func _ready():
+#	$WorldEnvironment.get_environment().set_dof_blur_near_enabled(true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,6 +26,7 @@ func _on_KillPlane_body_entered(body):
 
 
 func _on_New_Game_start_game():
+	$Blur.hide()
 	spawn_enemies()
 	spwan_coins()
 	spawn_key()
@@ -40,10 +41,11 @@ func _on_New_Game_start_game():
 	$Player/CanvasLayer/Life2.show()
 	$Player/CanvasLayer/Life3.show()
 	$NewGameScreen.hide()
-	$WorldEnvironment.get_environment().set_dof_blur_near_enabled(false)
+#	$WorldEnvironment.get_environment().set_dof_blur_near_enabled(false)
 	
 
 func _on_Player_game_over():
+	$Blur.show()
 	get_tree().call_group("enemies", "queue_free")
 	get_tree().call_group("coins", "queue_free")
 	$Player.velocity.x = 0
@@ -51,7 +53,7 @@ func _on_Player_game_over():
 	$Player.position.y = 400
 	$Player/AnimatedSprite.play("idle")
 	$Player.game_on = false
-	$WorldEnvironment.get_environment().set_dof_blur_near_enabled(true)	
+#	$WorldEnvironment.get_environment().set_dof_blur_near_enabled(true)	
 	if player_won:
 		$GameOverScreen/Label.text = "Congrats! You Won!"
 	else:
@@ -93,7 +95,7 @@ func spwan_coins():
 	
 func spawn_key():
 	var key = KEY.instance()
-	key.position = Vector2(3430, 520)
+	key.position = Vector2(3550, 420)
 	add_child(key)
 
 func _on_Player_collect_coin():

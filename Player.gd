@@ -85,12 +85,12 @@ func _process(delta):
 			dash_count = 1
 			velocity.y = -JUMP
 			anim.play("jump")
-#		elif dash_count > 0:
-#			direction = 1 if anim.flip_h else -1
-## warning-ignore:integer_division
-#			velocity.y = -JUMP / 2
-#			velocity.x = move_toward(velocity.x, -direction * MAX_SPEED * 2, ACCELERATION * 4)
-#			dash_count = 0
+		elif dash_count > 0:
+			direction = 1 if anim.flip_h else -1
+# warning-ignore:integer_division
+			velocity.y = -JUMP / 2
+			velocity.x = move_toward(velocity.x, -direction * MAX_SPEED * 2, ACCELERATION * 4)
+			dash_count = 0
 			
 	
 	# Handle dash down
