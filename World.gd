@@ -30,6 +30,7 @@ func _on_New_Game_start_game():
 	spawn_enemies()
 	spwan_coins()
 	spawn_key()
+	$Player.position.x = 4200	
 	$GameSound.play()
 	$Player.game_on = true
 	$Player.has_key = false
@@ -66,36 +67,24 @@ func _on_Player_game_over():
 
 
 func spawn_enemies():
-	var enemy1 = ENEMY.instance()
-#	enemy1.position = Vector2(50, 400)
-	enemy1.position = Vector2(1295, 180)
-	add_child(enemy1)
-	
-	var enemy2 = ENEMY.instance()	
-	enemy2.position = Vector2(2000, 400)
-	add_child(enemy2)
-	
-	var enemy3 = ENEMY.instance()	
-	enemy3.position = Vector2(2900, 400)
-	add_child(enemy3)
+	var positions = [Vector2(1295, 180), Vector2(2000, 400), Vector2(2900, 400), Vector2(3640, 130)]
+	for pos in positions:
+		var tempEnemy = ENEMY.instance()
+		tempEnemy.position = pos
+		add_child(tempEnemy)
 
 
 func spwan_coins():
-	var coin1 = COIN.instance()
-	coin1.position = Vector2(3570, 280)
-	add_child(coin1)
-	
-	var coin2 = COIN.instance()	
-	coin2.position = Vector2(800, 200)
-	add_child(coin2)
-	
-	var coin3 = COIN.instance()	
-	coin3.position = Vector2(3700, 35)
-	add_child(coin3)
+#	return
+	var positions = [Vector2(1000, -100), Vector2(800, 200), Vector2(4000, -100)]
+	for pos in positions:
+		var tempCoin = COIN.instance()
+		tempCoin.position = pos
+		add_child(tempCoin)
 	
 func spawn_key():
 	var key = KEY.instance()
-	key.position = Vector2(3550, 420)
+	key.position = Vector2(3570, 350)
 	add_child(key)
 
 func _on_Player_collect_coin():
