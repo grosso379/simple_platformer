@@ -30,7 +30,6 @@ func _on_New_Game_start_game():
 	spawn_enemies()
 	spwan_coins()
 	spawn_key()
-	$Player.position.x = 4200	
 	$GameSound.play()
 	$Player.game_on = true
 	$Player.has_key = false
