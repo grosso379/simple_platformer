@@ -25,8 +25,13 @@ common/drop_mouse_on_gui_input_disabled=true
 
 [input]
 
-ui_end={
+ui_cancel={
 "deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+ui_end={
+"deadzone": 0.51,
 "events": [  ]
 }
 ui_pick={
