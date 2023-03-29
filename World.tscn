@@ -123,7 +123,7 @@ position = Vector2( 23, 20 )
 scale = Vector2( 0.01, 0.01 )
 frames = SubResource( 5 )
 animation = "idle"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Key" type="Sprite" parent="Player/CanvasLayer"]
